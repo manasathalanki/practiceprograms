@@ -1,0 +1,32 @@
+package com.java8.filehandling;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Filewriter {
+
+	
+
+	public static void main(String[] args) throws IOException {
+
+		//if u enable append to true that many times same lines will be added
+		FileWriter writer=new FileWriter
+				("C:\\Users\\006299\\PracticePrograms\\java8\\textfiles\\sample.txt",true);
+		
+		
+		writer.write(100);
+		writer.write("manasa");
+		//to add white space character like go to next line give 10 
+		writer.write(10);
+		char[] ch={'c','g','f'};
+		writer.write(ch);
+		writer.flush();
+		//System.out.println(writer.append('f'));
+		
+		
+	
+		
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package review;
+
+public class SortingEmployeeMapAndFlatMap {
+
+	public static void main(String[] args) {
+
+		//transform data from lowercase to uppercase ---> Map
+		//convert stream of stream into single stream ---> FlatMap
+	}
+
+}

@@ -1,0 +1,35 @@
+package review;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class SortingMap {
+
+	public static void main(String[] args) {
+		Map<Integer,String> map=new HashMap<>();
+		map.put(5, "manasa5");
+		map.put(1, "manasa1");
+		map.put(4, "manasa4");
+		map.put(2, "manasa2");
+		
+		//sorting using anonymous class
+		List<Entry<Integer,String>> listEntries=new ArrayList<>(map.entrySet());
+//		Collections.sort(listEntries,new Comparator<Entry<Integer,String>>() {
+//			@Override
+//			public int compare(Entry<Integer, String> o1, Entry<Integer, String> o2) {
+//				// TODO Auto-generated method stub
+//				return o1.getKey()-o2.getKey();
+//			}
+//		});
+		
+		//sorting using lamda expression
+		Collections.sort(listEntries,(o1,o2)->o1.getKey()-o2.getKey());
+		System.out.println(listEntries);
+	}
+
+}

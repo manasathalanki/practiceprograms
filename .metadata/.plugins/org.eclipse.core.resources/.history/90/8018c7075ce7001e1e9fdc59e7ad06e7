@@ -1,0 +1,16 @@
+package review;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SortingMap {
+
+	public static void main(String[] args) {
+		Map<Integer,String> map=new HashMap<>();
+		map.put(5, "manasa5");
+		map.put(1, "manasa1");
+		map.put(4, "manasa4");
+		map.put(2, "manasa2");
+	}
+
+}

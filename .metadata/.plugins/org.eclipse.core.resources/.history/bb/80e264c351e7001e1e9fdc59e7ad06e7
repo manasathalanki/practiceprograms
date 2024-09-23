@@ -1,0 +1,17 @@
+package review;
+
+public class SortingEmployee {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	
+
+}
+class Employee{
+	Integer id;
+	String name;
+	long salary;
+}

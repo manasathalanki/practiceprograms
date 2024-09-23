@@ -1,0 +1,38 @@
+package review;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.wissen.review.Employee;
+
+
+public class SortingEmployee {
+
+	public static void main(String[] args) {
+		List<Employee> employeelist=new ArrayList<>();
+		employeelist.add(new Employee(1219, "testuser", "ggggg", "eee", 50000.00, "shanthi nagar"));
+		employeelist.add(new Employee(1225, "superuser", "ttfghh", "eee", 12000.00, "colony-cmrit"));
+		employeelist.add(new Employee(1204, "wuser", "ttfghh", "eee", 29000.00, "colony-beml"));
+		employeelist.add(new Employee(1201, "vuser", "ttfghh", "eee", 40000.00, "brifge-colony"));
+		employeelist.add(new Employee(1210, "auser", "ttfghh", "eee", 88000.00, "street-colony"));
+//		Collections.sort(employeelist);
+		
+		//using anonymous class
+//		Collections.sort(employeelist, new Comparator<Employee>() {
+//			@Override
+//			public int compare(Employee o1, Employee o2) {
+//				return (int) (o1.getSalary()-o2.getSalary());
+//			}
+//		});
+		
+		// using java8
+		employeelist.stream().sorted((o1,o2)->(int)(o1.getSalary()-o2.getSalary())).collect(Collectors.toList());
+		System.out.println(employeelist);
+	}
+	
+	
+
+}

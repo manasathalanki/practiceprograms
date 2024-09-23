@@ -1,0 +1,35 @@
+package interface_lamda;
+
+public class AnonymousInnerExample {
+
+	public static void main(String[] args) {
+
+		Thread t = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				for (int i = 0; i < 10; i++) {
+
+					//System.out.println("child thread starts");
+				}
+
+			}
+		});
+		t.start();
+		for (int i = 0; i < 10; i++) {
+
+			//System.out.println("Parent thread starts " + i);
+		}
+
+		// with using lamda expressions
+		Thread t1 = new Thread(() -> {
+			for (int i = 0; i < 10; i++) {
+
+				System.out.println("--child thread starts--"+i);
+			}
+		});
+		t1.start();
+
+	}
+
+}

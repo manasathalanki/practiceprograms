@@ -1,0 +1,10 @@
+package com.wissen.programs;
+
+public class DoublingOfInteger {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

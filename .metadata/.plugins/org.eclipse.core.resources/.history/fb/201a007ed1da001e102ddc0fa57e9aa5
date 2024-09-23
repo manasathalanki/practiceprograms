@@ -1,0 +1,19 @@
+package com.wissen.programs;
+
+public class FrequencyOfLetter {
+
+	public static void main(String[] args) {
+		String inputString = "Manasa Thalanki";
+		int[] count = new int[26];
+		char[] ch=inputString.toCharArray();
+		for(int i=0;i<ch.length;i++) {
+			if(Character.isLetter(ch[i]))
+			{
+				char lower=Character.toLowerCase(ch[i]);
+				int lowerIndex=lower-'a';
+				count[lowerIndex]++;
+			}
+		}
+	}
+
+}

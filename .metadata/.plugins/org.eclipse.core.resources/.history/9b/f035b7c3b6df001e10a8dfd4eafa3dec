@@ -1,0 +1,28 @@
+package com.wissen.programs;
+
+class MyThread extends Thread {
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			Thread.yield();
+			System.out.println("Child is calling");
+		}
+	}
+}
+
+public class DoublingOfInteger {
+
+	public static void main(String[] args) {
+//		Runnable t = new MyThread();
+		MyThread t1 = new MyThread();
+		t1.start();// create a thread and register it with thread scheduler and ts will give chance
+					// to execute
+//		t.run();
+		System.out.println(Thread.currentThread().getName());
+//		t1.setPriority(100);
+		System.out.println(Thread.currentThread().getName() + "=======priority ===+0" + t1.getPriority());
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Main---------------- is calling");
+		}
+	}
+
+}

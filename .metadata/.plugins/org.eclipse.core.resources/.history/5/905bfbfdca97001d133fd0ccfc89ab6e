@@ -1,0 +1,24 @@
+package com.wissen.review;
+
+public class Logic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] arr = { "ABc", "abc", "BC", "ABC", "abc", "bc", "abC", "cd", "bc", "bc", "ABc", "CD" };
+		String s1 = "";
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i+1; j < arr.length; j++) {
+				if(arr[i]==arr[j]) {
+				s1+=arr[i];
+				System.out.println(s1);
+				}
+				else
+					s1+="";
+			}
+		}
+		System.out.println(s1);
+
+	}
+
+}

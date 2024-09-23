@@ -1,0 +1,32 @@
+package review;
+import java.util.*;
+
+public class GloveShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the number of gloves
+        int N = scanner.nextInt();
+        
+        // Create a HashMap to store the count of each tag
+        Map<Integer, Integer> gloveCount = new HashMap<>();
+        
+        // Read the tags and update the count
+        for (int i = 0; i < N; i++) {
+            int tag = scanner.nextInt();
+            gloveCount.put(tag, gloveCount.getOrDefault(tag, 0) + 1);
+        }
+        
+        // Calculate the total income
+        int totalIncome = 0;
+        for (int count : gloveCount.values()) {
+            // Each pair of gloves contributes 5 times its tag number to income
+            totalIncome += (count / 2) * 5 * 2 * count; // Fix the calculation
+        }
+        
+        // Print the total income
+        System.out.println(totalIncome);
+        
+        scanner.close();
+    }
+}

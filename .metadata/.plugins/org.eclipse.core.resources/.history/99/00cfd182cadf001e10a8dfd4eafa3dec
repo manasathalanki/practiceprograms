@@ -1,0 +1,47 @@
+package com.wissen.programs;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class DoublingOfInteger {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> al = new ArrayList<>();
+		al.add(10);
+		al.add(26);
+		al.add(4);
+		al.add(15);
+//		Iterator<Integer> itr = al.iterator();
+//		while (itr.hasNext()) {
+//			if (itr.next() % 2 == 0) {
+////				al.add(55);
+//				System.out.println(itr.next());
+//			}
+//		}
+		al.sort((o1, o2) -> (o1 > o2) ? 1 : o1 < o2 ? -1 : 0);
+		al.forEach(System.out::println);
+		Student s=new Student();
+		HashMap<Object, String> map1 = new HashMap<>();
+//		map1.put(1, "Manasa");
+//		map1.put(5, "Jyo");
+//		map1.put(7, "Raji");
+//		map1.put(9, "Mohan");
+//		map1.put(10, "Subbu");
+//		Iterator<Map.Entry<Integer, String>> itr = map1.entrySet().iterator();
+//		while (itr.hasNext()) {
+//			Map.Entry<Integer, String> m1 = itr.next();
+//			System.out.println(m1.getKey() + m1.getValue());
+//		}
+//		for (Map.Entry<Integer, String> m : map1.entrySet()) {
+//			System.out.println(m.getKey() + m.getValue());
+//		}
+//		map1.forEach((k, v) -> System.out.println("key---- " + k + "Value --->" + v));
+		map1.put(s, "Manasa");
+		s=null;
+		System.gc();
+		System.out.println(map1);
+	}
+
+}

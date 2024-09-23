@@ -1,0 +1,19 @@
+package review;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.wissen.review.Employee;
+
+
+public class SortingEmployee {
+
+	public static void main(String[] args) {
+		List<Employee> employeelist=new ArrayList<>();
+		employeelist.add(new Employee(1, "testuser", "ggggg", "eee", 50000.00, "shanthi nagar"));
+
+	}
+	
+	
+
+}

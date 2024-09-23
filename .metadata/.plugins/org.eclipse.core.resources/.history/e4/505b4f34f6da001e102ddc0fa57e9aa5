@@ -1,0 +1,23 @@
+package com.wissen.programs;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DoublingOfInteger {
+
+	public static void main(String[] args) {
+		String[] strings = { "a", "b", "a", "c", "a", "d", "a" };
+		String res = "";
+		String s = "";
+		Map<String, Integer> map = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			s = strings[i];
+			map.put(s, map.getOrDefault(s, 0) + 1);
+			if (map.get(s) % 2 == 0)
+				res += s;
+		}
+
+		System.out.println(res);
+	}
+
+}

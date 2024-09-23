@@ -1,0 +1,24 @@
+package com.java8.filehandling;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Filewriter {
+
+	
+
+	public static void main(String[] args) throws IOException {
+
+		FileWriter writer=new FileWriter
+				("C:\\Users\\006299\\PracticePrograms\\java8\\textfiles\\sample.txt");
+		
+		writer.write(1);
+		writer.write("\\ manasa ");
+		char[] ch={'c','g','f'};
+		writer.write(ch);
+		writer.flush();
+		System.out.println(writer.append('f'));
+
+	}
+
+}

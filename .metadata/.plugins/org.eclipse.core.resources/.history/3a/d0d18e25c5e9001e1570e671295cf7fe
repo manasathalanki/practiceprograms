@@ -1,0 +1,63 @@
+package review;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class MapReduceExample {
+
+	public static void main(String[] args) {
+
+		List<Integer> numbersList = Arrays.asList(2, 6, 2, 1, 3,5,9,7);
+		
+		int count =(int) numbersList.stream().count();
+		//3. Write a Java program to calculate the sum of all even, odd numbers in a list using streams.
+		int evenSum=numbersList.stream().filter(num->num%2==0).mapToInt(Integer::intValue).sum();
+		int oddSum=numbersList.stream().filter(num->num%2!=0).mapToInt(Integer::intValue).sum();
+		System.out.println(evenSum+"----"+oddSum);
+		
+		//Average of numbers using java 8
+		double avg=numbersList.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
+		System.out.println(avg);
+		
+		//2. Write a Java program to convert a list of strings to uppercase or lowercase using streams.
+		List<String> caseList=Arrays.asList("manasa","java","program");
+		caseList=caseList.stream().map(s->s.toUpperCase()).collect(Collectors.toList());
+		caseList=caseList.stream().map(String::toUpperCase).collect(Collectors.toList());
+		System.out.println(caseList);
+		
+		
+		
+		
+		// sum of the numbers
+//		int sum=0;
+//		for(int n:numbersList)
+//		{
+//			sum=sum+n;
+//		}
+//		System.out.println(sum);
+
+		// using java 8 addition
+		int sum1 = numbersList.stream().mapToInt(i -> i).sum();
+		System.out.println(sum1);
+
+		int reduceSum = numbersList.stream().reduce(0, (a, b) -> a + b);
+		System.out.println(reduceSum);
+
+		Optional<Integer> optionalSum = numbersList.stream().reduce(Integer::sum);
+		System.out.println(optionalSum.get());
+
+		// using java8 multiplication
+		int mulSum = numbersList.stream().reduce(1, (a, b) -> a * b);
+		System.out.println(mulSum);
+
+		// using java8 max value
+		int maxValue = numbersList.stream().reduce(0, (a, b) -> a > b ? a : b);
+		System.out.println(maxValue);
+
+		int optionalMaxWithMethodReference = numbersList.stream().reduce(Integer::max).get();
+		System.out.println(optionalMaxWithMethodReference);
+	}
+
+}

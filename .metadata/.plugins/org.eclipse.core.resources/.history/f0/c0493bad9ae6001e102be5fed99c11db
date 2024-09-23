@@ -1,0 +1,26 @@
+package com.wissen.review;
+
+public class Parathesis {
+
+	public static void main(String[] args) {
+		String str = "(lee(t)o)de)";
+		StringBuffer sb = new StringBuffer();
+		char[] ch = str.toCharArray();
+		int open = 0;
+		for (char c : ch) {
+			if (c == '(') {
+				open++;
+			}
+			else if (c == ')') {
+				if(open==0)
+				{
+					continue;
+				}
+				open--;
+			}
+			sb.append(c);
+		}
+		System.out.println(sb);
+	}
+
+}

@@ -1,0 +1,47 @@
+package com.wissen.review;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Parathesis {
+
+	public static void main(String[] args) {
+		String str = "))((";
+		StringBuilder sb = new StringBuilder();
+		char[] ch = str.toCharArray();
+		int open = 0;
+		for (char c : ch) {
+			if (c == '(') {
+				open++;
+			} else if (c == ')') {
+				if (open == 0) {
+					continue;
+				}
+				open--;
+			}
+			sb.append(c);
+		}
+		System.out.println(sb + "open::" + open);
+		StringBuilder result = new StringBuilder();
+		for (int i = sb.length() - 1; i >= 0; i--) {
+			if (sb.charAt(i) == '(' && open-- > 0)
+				continue;
+			result.append(sb.charAt(i));
+		}
+		System.out.println(result.reverse().toString());
+
+		String string = "aabbccdefatafaz";
+
+		char[] chars = string.toCharArray();
+		Set<Character> charSet = new LinkedHashSet<Character>();
+		for (char c : chars) {
+			charSet.add(c);
+		}
+		StringBuilder sb1 = new StringBuilder();
+		for (Character character : charSet) {
+		    sb1.append(character);
+		}
+		System.out.println(sb1.toString());
+	}
+
+}

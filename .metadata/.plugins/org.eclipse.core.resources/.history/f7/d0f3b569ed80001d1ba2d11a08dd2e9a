@@ -1,0 +1,15 @@
+package com.java8.filehandling;
+
+public class Filewriter {
+
+	
+
+	public static void main(String[] args) {
+
+		Filewriter fw=new Filewriter("C:\\Users\\006299\\PracticePrograms\\java8\\textfiles\\sample.txt");
+		
+		
+
+	}
+
+}

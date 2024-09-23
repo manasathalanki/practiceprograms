@@ -1,0 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class LetterFrequencyCounter {
+    public static void main(String[] args) {
+        String inputString = "Manasa Thalanki";
+        Map<Character, Integer> letterFrequencyMap = countLetterFrequency(inputString);
+        printLetterFrequency(letterFrequencyMap);
+    }
+
+    private static Map<Character, Integer> countLetterFrequency(String inputString) {
+        Map<Character, Integer> letterFrequencyMap = new HashMap<>();
+        for (char c : inputString.toCharArray()) {
+            if (Character.isLetter(c)) {
+                char lowercaseChar = Character.toLowerCase(c);
+                letterFrequencyMap.put(lowercaseChar, letterFrequencyMap.getOrDefault(lowercaseChar, 0) + 1);
+            }
+        }
+        return letterFrequencyMap;
+    }
+
+    private static void printLetterFrequency(Map<Character, Integer> letterFrequencyMap) {
+        for (Map.Entry<Character, Integer> entry : letterFrequencyMap.entrySet()) {
+            System.out.println("Letter: " + entry.getKey() + ", Frequency: " + entry.getValue());
+        }
+    }
+}

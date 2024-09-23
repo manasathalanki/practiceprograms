@@ -1,0 +1,18 @@
+package review;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.wissen.review.Employee;
+
+public class SortingEmployee {
+
+	public static void main(String[] args) {
+		List<EmployeeTest> employeelist=new ArrayList<>();
+		employeelist.add(new Employee(null, null, null, null, 0, null));
+
+	}
+	
+	
+
+}

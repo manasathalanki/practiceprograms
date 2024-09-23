@@ -1,0 +1,6 @@
+package review.pojo;
+class Employee{
+	Integer id;
+	String name;
+	long salary;
+}

@@ -1,0 +1,44 @@
+package com.wells.fair.finance.dashboard.controller;
+
+import java.util.Map;
+
+import com.wells.fair.finance.dashboard.entity.RDR_Dashbord_Info;
+import com.wells.fair.finance.dashboard.service.RDR_Dasbord_Serviceiml;
+
+@RestController
+
+@RequestMapping("/wellsforg")
+
+public class RDR_Dashbord_Info_controller {
+	
+	
+	public static final String SUCCESS = "success";
+	public static final String DATA = "data";
+	public static final String STATUS = "status";
+	public static final String MSG = "msg";
+	public static final String ERROR = "error";
+	
+	@Autowired
+	private RestTemplate restTemplate;
+
+	@Autowired
+
+	RDR_Dasbord_Serviceiml rDR_Dasbord_Service;
+
+	@PostMapping("/loadlogs")
+
+	public Map<String,Object> insert(@RequestBody RDR_Dashbord_Info rDR_Dashbord_Info) {
+
+		return rDR_Dasbord_Service.create(rDR_Dashbord_Info);
+
+	}
+
+	@PutMapping("/update/{id}")
+
+	public Map<String,Object> update(@PathVariable Integer id, @RequestBody RDR_Dashbord_Info rDR_Dashbord_Info) {
+
+		return rDR_Dasbord_Service.updateDashbord(id, rDR_Dashbord_Info);
+
+	}
+
+}

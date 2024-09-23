@@ -1,0 +1,37 @@
+package com.wissen.review;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Logic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] arr = { "ABc", "abc", "BC", "ABC", "abc", "bc", "abC", "cd", "bc", "bc", "ABc", "CD" };
+		int k = 0, l = 0;
+		List<String> ar = new ArrayList<>();
+
+		for (int i = 0; i < arr.length; i++) {
+			String[] s1 = new String[arr.length];
+			for (int j = i + 1; j < arr.length; j++) {
+
+				if (arr[i].equalsIgnoreCase(arr[j])) {
+					// s.add(arr[i]);
+					ar.add(arr[i]);
+					System.out.println(ar + " ");
+
+				}
+
+			}
+
+		}
+//		System.out.println(s);
+		System.out.println(ar);
+
+	}
+
+}
